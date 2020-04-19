@@ -71,21 +71,21 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 10518}
     - Class: 114
-      Script: {instanceID: 10922}
+      Script: {instanceID: 10634}
     - Class: 114
-      Script: {instanceID: 11036}
+      Script: {instanceID: 10838}
     - Class: 114
-      Script: {instanceID: 11122}
+      Script: {instanceID: 10926}
     - Class: 114
-      Script: {instanceID: 11334}
+      Script: {instanceID: 11040}
     - Class: 114
-      Script: {instanceID: 11390}
+      Script: {instanceID: 11042}
     - Class: 114
-      Script: {instanceID: 17652}
+      Script: {instanceID: 11128}
     - Class: 114
-      Script: {instanceID: 18684}
+      Script: {instanceID: 11340}
     - Class: 114
-      Script: {instanceID: 19438}
+      Script: {instanceID: 11396}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -361,7 +361,7 @@ ScriptsOnlyBuild:
     className: RemoteTestResultSender
   - hash:
       serializedVersion: 2
-      Hash: 37a6fe73039cdf70b1437f5433ad45c2
+      Hash: b8332e941572fc830e364638b0dd080e
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: PlayerController
@@ -383,6 +383,12 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
     className: RawImage
+  - hash:
+      serializedVersion: 2
+      Hash: 17fa1733260e367c570b01888b0a72fb
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: BGScroller
   - hash:
       serializedVersion: 2
       Hash: 5ad4aa237d47ac2bab17bacb672edf7a
@@ -442,6 +448,12 @@ ScriptsOnlyBuild:
       Hash: de7d6a5820dded6c7f75780e98f1dc41
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
+    className: WeaponController
+  - hash:
+      serializedVersion: 2
+      Hash: de7d6a5820dded6c7f75780e98f1dc41
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
     className: Done_WeaponController
   - hash:
       serializedVersion: 2
@@ -485,6 +497,12 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
     className: GraphicRaycaster
+  - hash:
+      serializedVersion: 2
+      Hash: e8f5a70394bddabe9c9cfde4304d970e
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: EvasiveManeuver
   - hash:
       serializedVersion: 2
       Hash: 88cc9df3c6fc697bfbeacd24c0d6f2d7
@@ -553,7 +571,7 @@ ScriptsOnlyBuild:
     className: BaseInput
   - hash:
       serializedVersion: 2
-      Hash: 96579b1d7c32aebb6c65db101ee7a10b
+      Hash: 8b0a07bcf8e28894caaccc2a8742202a
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: GameController
@@ -631,22 +649,10 @@ ScriptsOnlyBuild:
     className: PlayableTrack
   - hash:
       serializedVersion: 2
-      Hash: be2d1663d6bc8ce39ce9c8dea6a963c7
+      Hash: b3b88a83977f0095ee5fd9765e4de1e8
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
-    className: BGScroller
-  - hash:
-      serializedVersion: 2
-      Hash: de7d6a5820dded6c7f75780e98f1dc41
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: WeaponController
-  - hash:
-      serializedVersion: 2
-      Hash: e8f5a70394bddabe9c9cfde4304d970e
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: EvasiveManeuver
+    className: AnimationScript
   platform: 5
   scenePathNames:
   - Assets/Scenes/Space_Shooter_Tutorial.unity

@@ -2,7 +2,6 @@
 using UnityEngine.SceneManagement;
 using System.Collections;
 using UnityEngine.UI;
-using UnityEngine.SceneManagement;
 
 public class GameController : MonoBehaviour
 {
@@ -17,12 +16,17 @@ public class GameController : MonoBehaviour
     public Text scoreText;
     public Text restartText;
     public Text gameOverText;
-   
 
-    
+    public AudioClip musicClipBackground;
+    public AudioClip musicClipWin;
+    public AudioClip musicClipLoss;
+    public AudioSource musicSource;
+
+    public int score;
+
     private bool gameOver;
     private bool restart;
-    private int score;
+    
 
     void Start()
     {
@@ -31,6 +35,9 @@ public class GameController : MonoBehaviour
         restartText.text = "";
         gameOverText.text = "";
         score = 0;
+        musicSource.clip = musicClipBackground;
+        musicSource.Play();
+        musicSource.loop = true;
         UpdateScore();
         StartCoroutine(SpawnWaves());
     }
@@ -83,11 +90,15 @@ public class GameController : MonoBehaviour
     void UpdateScore()
     {
         scoreText.text = "Points: " + score;
-        if (score >= 100)
+        if (score >= 150)
         {
             gameOverText.text = "You win! Game created by Jamie LaRose";
             gameOver = true;
             restart = true;
+            musicSource.clip = musicClipWin;
+            musicSource.Play();
+            musicSource.loop = true;
+            
         }
     }
 
@@ -95,5 +106,8 @@ public class GameController : MonoBehaviour
     {
         gameOverText.text = "You Lose! Game created by Jamie LaRose";
         gameOver = true;
+        musicSource.clip = musicClipLoss;
+        musicSource.Play();
+
     }
 }

@@ -14,26 +14,81 @@ public class PlayerController : MonoBehaviour
     public Boundary boundary;
 
     public GameObject shot;
+    public GameObject shot2;
     public Transform shotSpawn;
+    public Transform shotSpawn2;
+    public Transform shotSpawn3;
+    public Transform shotSpawn4;
     public float fireRate;
+    public float fireRate2;
+
+    public AudioClip musicClipPickup;
+    public AudioSource musicSource2;
 
     private float nextFire;
     private Rigidbody rb;
 
+    private GameController gameController;
+    private bool weaponUpgrade;
+
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
+        weaponUpgrade = false;
+                GameObject gameControllerObject = GameObject.FindWithTag("GameController");
+        if (gameControllerObject != null)
+        {
+            gameController = gameControllerObject.GetComponent<GameController>();
+        }
+        if (gameController == null)
+        {
+            Debug.Log("Cannot find 'GameController' script");
+        }
+
     }
 
-    void Update()
+    void OnTriggerEnter(Collider other)
     {
-        if (Input.GetButton("Fire1") && Time.time > nextFire)
+        if (other.gameObject.CompareTag("Enemy"))
         {
-            nextFire = Time.time + fireRate;
-            Instantiate(shot, shotSpawn.position, shotSpawn.rotation);
-            GetComponent<AudioSource>().Play();
+            other.gameObject.SetActive(false);
+
+            {
+                Destroy(gameObject, .1f);
+            }
+
+        }
+        if (other.gameObject.CompareTag("PickUp"))
+        {
+            other.gameObject.SetActive(false);
+            weaponUpgrade = true;
+            musicSource2.clip = musicClipPickup;
+            musicSource2.Play();
         }
     }
+    void Update()
+    {
+        if (weaponUpgrade == false)
+            if (Input.GetButton("Fire1") && Time.time > nextFire)
+            {
+                nextFire = Time.time + fireRate;
+                
+                Instantiate(shot, shotSpawn.position, shotSpawn.rotation); 
+                GetComponent<AudioSource>().Play();
+
+            }
+
+        if (weaponUpgrade == true)
+            if (Input.GetButton("Fire1") && Time.time > nextFire)
+            {
+                nextFire = Time.time + fireRate2;
+                Instantiate(shot2, shotSpawn2.position, Quaternion.identity);
+                Instantiate(shot2, shotSpawn3.position, Quaternion.identity);
+                Instantiate(shot2, shotSpawn4.position, Quaternion.identity);
+            }
+    }
+
+    
     void FixedUpdate()
     {
         float moveHorizontal = Input.GetAxis("Horizontal");
